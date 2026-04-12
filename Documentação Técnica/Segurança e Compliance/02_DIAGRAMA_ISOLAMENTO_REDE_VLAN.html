@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Isolamento de Redes: JARVIS</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f0f2f5; color: #333; margin: 0; padding: 40px; }
+        .container { max-width: 900px; margin: 0 auto; background: white; padding: 50px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        h1 { color: #0a1128; border-bottom: 3px solid #00f2ff; padding-bottom: 10px; }
+        .diagram-mock { background: #0a1128; color: #00f2ff; padding: 30px; border-radius: 8px; margin: 30px 0; font-family: monospace; text-align: center; border: 2px dashed #00f2ff; }
+        .tier { display: inline-block; border: 1px solid #00f2ff; padding: 10px; margin: 0 10px; }
+        .content-section { margin-top: 30px; }
+        h3 { color: #0a1128; margin-top: 25px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VLAN_SEG_002: ESTRATÉGIA DE ISOLAMENTO DE REDE</h1>
+        <p>Documentação técnica para equipes de Infraestrutura e TI.</p>
+
+        <div class="diagram-mock">
+            [ FIREWALL / GATEWAY ]<br>
+            |<br>
+            ----------------<br>
+            |              |<br>
+            [ VLAN ADM ]    [ VLAN IoT JARVIS ]<br>
+            (PDVs, Office)   (Sensores, Edge)<br>
+            <br>
+            NO CROSS-TALK PERMITTED
+        </div>
+
+        <div class="content-section">
+            <h3>Segregação Crítica</h3>
+            <p>O ecossistema JARVIS exige a criação de uma sub-rede (VLAN) isolada logicamente da rede administrativa do cliente. O tráfego de saída é restrito apenas ao broker MQTT oficial, bloqueando qualquer comunicação lateral entre os sensores e outros dispositivos da rede (ex: Impressoras térmicas, balanças, desktops).</p>
+
+            <h3>Impacto em Banda</h3>
+            <p>A telemetria enviada pelos nós é otimizada em pacotes binários compactos. O consumo médio de banda por sensor é inferior a <strong>2KB/s</strong>, garantindo impacto zero em sistemas de PDV ou ERP legados.</p>
+        </div>
+    </div>
+</body>
+</html>

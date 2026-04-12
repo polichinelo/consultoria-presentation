@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PoC Data: Log de Autonomia Agêntica</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f4f7f6; color: #333; margin: 0; padding: 40px; }
+        .container { max-width: 1000px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #0a1128; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .row { display: flex; gap: 20px; margin-top: 30px; align-items: center; }
+        .log-box { flex: 1; background: #1e1e1e; color: #00ff00; padding: 20px; border-radius: 4px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; }
+        .asana-box { flex: 1.2; box-shadow: 0 4px 12px rgba(0,0,0,0.2); border-radius: 8px; overflow: hidden; }
+        img { width: 100%; display: block; }
+        .explanation { margin-top: 30px; border-top: 1px solid #eee; padding-top: 20px; font-style: italic; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>POC_LOG_002: AUTONOMIA AGÊNTICA (INTEGRAÇÃO ASANA)</h1>
+        <p>Demonstração da inteligência reativa do JARVIS agindo sem supervisão humana.</p>
+
+        <div class="row">
+            <div class="log-box">
+                [LOG] 09:12:31 ANOMALY DETECTED<br>
+                [LOG] SENSOR: COMPRESSOR_03_VIBRATION<br>
+                [LOG] VALUE: 8.4 mm/s (THRESHOLD: 5.5)<br>
+                [LOG] TRIGGERING DIAGNOSTIC SUITE...<br>
+                [LOG] SPECTRUM ANALYSIS COMPLETE.<br>
+                [LOG] CORRELATING CAUSE ROOT...<br>
+                [LOG] ISSUE ID: BEARING_FAILURE_DE<br>
+                [LOG] ACTION: CREATING ASANA TICKET...<br>
+                [LOG] TICKET CREATED: #PCM88741
+            </div>
+            <div class="asana-box">
+                <img src="../assets/asana_log.png" alt="Asana Integration">
+            </div>
+        </div>
+
+        <div class="explanation">
+            <strong>O Fluxo Jarvis:</strong> No exemplo real documentado acima, o sistema detectou uma vibração anômala, correlacionou os dados espectrais com falhas mecânicas conhecidas no banco vetorial (ChromaDB) e gerou automaticamente uma Ordem de Serviço no Asana com prioridade Alta e instruções técnicas detalhadas para o reparo.
+        </div>
+    </div>
+</body>
+</html>
