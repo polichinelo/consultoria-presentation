@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Links | Matheus Jeronimo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy-blue: #0A192F;
+            --slate-grey: #64748B;
+            --tech-cyan: #00E5FF;
+            --tech-red: #FF3366;
+            --tech-green: #00FF9D;
+            --text-light: #E2E8F0;
+            --card-bg: rgba(10, 25, 47, 0.7);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--navy-blue);
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at center, rgba(0,229,255,0.05) 0%, transparent 70%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 20px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .profile-section {
+            margin-bottom: 40px;
+        }
+
+        .profile-img-container {
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, var(--tech-cyan), var(--navy-blue));
+            box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+            position: relative;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--navy-blue);
+            background-color: var(--navy-blue);
+        }
+
+        .profile-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-light);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .profile-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--tech-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .link-button {
+            display: block;
+            width: 100%;
+            padding: 18px 20px;
+            background: rgba(10, 25, 47, 0.6);
+            border: 1px solid rgba(0, 229, 255, 0.3);
+            border-radius: 8px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            text-transform: uppercase;
+        }
+
+        .link-button:hover {
+            background: var(--tech-cyan);
+            color: var(--navy-blue);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+            transform: translateY(-3px);
+            border-color: var(--tech-cyan);
+            font-weight: 700;
+        }
+
+        /* Setinha indicadora no hover */
+        .link-button::before {
+            content: '>';
+            position: absolute;
+            left: 20px;
+            color: var(--navy-blue);
+            opacity: 0;
+            transition: all 0.3s ease;
+            transform: translateX(-10px);
+        }
+
+        .link-button:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .link-button span {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .link-button:hover span {
+            transform: translateX(10px);
+        }
+
+        /* Efeito de brilho pulsante no CTA Principal */
+        .primary-cta {
+            border-color: var(--tech-cyan);
+            box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+            animation: pulse-border 2s infinite;
+        }
+
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.3); border-color: rgba(0, 229, 255, 0.6); }
+            50% { box-shadow: 0 0 25px rgba(0, 229, 255, 0.7); border-color: rgba(0, 229, 255, 1); }
+            100% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.3); border-color: rgba(0, 229, 255, 0.6); }
+        }
+
+        /* Grid Background (High tech touch) */
+        .network-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 0;
+            background-image: 
+                linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-position: center center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="network-bg"></div>
+    <div class="container">
+        <div class="profile-section">
+            <div class="profile-img-container">
+                <img src="20260410_145322-IMG_STYLE(1).jpg" alt="Matheus Jeronimo" class="profile-img">
+            </div>
+            <h1 class="profile-name">MATHEUS JERONIMO</h1>
+            <p class="profile-title">[ Engenharia de Confiabilidade ]</p>
+        </div>
+
+        <div class="links-container">
+            <a href="index.html" class="link-button primary-cta">
+                <span>APRESENTAÇÃO CONSULTORIA 4.0</span>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/matheus-jeronimo-a5a57aba" target="_blank" class="link-button">
+                <span>LINKEDIN PROFISSIONAL</span>
+            </a>
+            
+            <a href="https://wa.me/5551997128674" target="_blank" class="link-button">
+                <span>AGENDAR AUDITORIA (WHATSAPP)</span>
+            </a>
+            
+            <a href="https://www.instagram.com/matheuswjeronimo/" target="_blank" class="link-button">
+                <span>INSTAGRAM</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
