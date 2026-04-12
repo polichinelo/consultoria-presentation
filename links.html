@@ -32,20 +32,53 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-image: radial-gradient(circle at center, rgba(0,229,255,0.05) 0%, transparent 70%);
             overflow-x: hidden;
+            padding-top: 40px; /* Espaço para a status bar */
+        }
+
+        .system-status-bar {
+            background-color: rgba(10, 25, 47, 0.95);
+            color: var(--text-light);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            backdrop-filter: blur(5px);
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--tech-green);
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 8px var(--tech-green);
+            animation: pulse-dot 1.5s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0% { opacity: 1; box-shadow: 0 0 8px var(--tech-green); }
+            50% { opacity: 0.5; box-shadow: 0 0 2px var(--tech-green); }
+            100% { opacity: 1; box-shadow: 0 0 8px var(--tech-green); }
         }
 
         .container {
             width: 100%;
             max-width: 480px;
-            padding: 40px 20px;
+            padding: 20px 20px 40px;
             text-align: center;
             z-index: 2;
         }
 
         .profile-section {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .profile-img-container {
@@ -89,13 +122,13 @@
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 15px;
         }
 
         .link-button {
             display: block;
             width: 100%;
-            padding: 18px 20px;
+            padding: 16px 20px;
             background: rgba(10, 25, 47, 0.6);
             border: 1px solid rgba(0, 229, 255, 0.3);
             border-radius: 8px;
@@ -103,7 +136,7 @@
             text-decoration: none;
             font-family: 'JetBrains Mono', monospace;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.85rem; /* Ajuste sutil por causa de mais botões iterativos */
             letter-spacing: 1px;
             transition: all 0.3s ease;
             position: relative;
@@ -121,15 +154,15 @@
             font-weight: 700;
         }
 
-        /* Setinha indicadora no hover */
         .link-button::before {
             content: '>';
             position: absolute;
-            left: 20px;
+            left: 15px;
             color: var(--navy-blue);
             opacity: 0;
             transition: all 0.3s ease;
             transform: translateX(-10px);
+            font-size: 1rem;
         }
 
         .link-button:hover::before {
@@ -146,7 +179,6 @@
             transform: translateX(10px);
         }
 
-        /* Efeito de brilho pulsante no CTA Principal */
         .primary-cta {
             border-color: var(--tech-cyan);
             box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
@@ -159,7 +191,61 @@
             100% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.3); border-color: rgba(0, 229, 255, 0.6); }
         }
 
-        /* Grid Background (High tech touch) */
+        .download-btn::before {
+            content: '↓';
+        }
+
+        /* Trusted By */
+        .trusted-by {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 1px dashed rgba(226, 232, 240, 0.2);
+        }
+
+        .trusted-by p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--slate-grey);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .trusted-logos {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .trusted-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--slate-grey);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .trusted-logo:hover {
+            color: var(--tech-cyan);
+            opacity: 1;
+            text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 35px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.70rem;
+            color: var(--slate-grey);
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+
+        /* Generated Nano Banana Background */
         .network-bg {
             position: fixed;
             top: 0;
@@ -168,16 +254,19 @@
             height: 100vh;
             pointer-events: none;
             z-index: 0;
-            background-image: 
-                linear-gradient(rgba(0, 229, 255, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 229, 255, 0.04) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: center center;
+            background-image: linear-gradient(rgba(10,25,47,0.85), rgba(10,25,47,0.3)), url('assets/bg/links-bg.png');
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
         }
         
     </style>
 </head>
 <body>
+    <div class="system-status-bar">
+        <span class="status-dot"></span> SYSTEM STATUS: JARVIS CORE ONLINE | NODES ACTIVE: 14 | LATENCY: 24ms
+    </div>
+
     <div class="network-bg"></div>
     <div class="container">
         <div class="profile-section">
@@ -192,6 +281,10 @@
             <a href="index.html" class="link-button primary-cta">
                 <span>APRESENTAÇÃO CONSULTORIA 4.0</span>
             </a>
+
+            <a href="#" class="link-button download-btn" download>
+                <span>WHITEPAPER: ARQUITETURA DE CONFIABILIDADE 4.0</span>
+            </a>
             
             <a href="https://www.linkedin.com/in/matheus-jeronimo-a5a57aba" target="_blank" class="link-button">
                 <span>LINKEDIN PROFISSIONAL</span>
@@ -200,11 +293,29 @@
             <a href="https://wa.me/5551997128674" target="_blank" class="link-button">
                 <span>AGENDAR AUDITORIA (WHATSAPP)</span>
             </a>
+
+            <a href="#" class="link-button">
+                <span>SALVAR CONTATO (vCARD)</span>
+            </a>
             
             <a href="https://www.instagram.com/matheuswjeronimo/" target="_blank" class="link-button">
                 <span>INSTAGRAM</span>
             </a>
         </div>
+
+        <div class="trusted-by">
+            <p>TRUSTED BY</p>
+            <div class="trusted-logos">
+                <span class="trusted-logo">ROISTER</span>
+                <span class="trusted-logo">DEVANEIO</span>
+                <span class="trusted-logo">⚙️ FACTORY</span>
+            </div>
+        </div>
+
+        <footer class="footer">
+            MATHEUS JERONIMO &copy; 2026<br>
+            LEI DA ASSUNÇÃO: SOBERANIA EM ENGENHARIA
+        </footer>
     </div>
 </body>
 </html>
