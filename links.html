@@ -119,6 +119,35 @@
             letter-spacing: 1.5px;
         }
 
+        .email-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 14px;
+            padding: 8px 18px;
+            background: rgba(0, 229, 255, 0.08);
+            border: 1px solid rgba(0, 229, 255, 0.35);
+            border-radius: 50px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--tech-cyan);
+            text-decoration: none;
+            letter-spacing: 0.8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(6px);
+        }
+
+        .email-badge:hover {
+            background: rgba(0, 229, 255, 0.18);
+            box-shadow: 0 0 18px rgba(0, 229, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .email-badge::before {
+            content: '✉';
+            font-size: 0.9rem;
+        }
+
         .links-container {
             display: flex;
             flex-direction: column;
@@ -275,6 +304,7 @@
             </div>
             <h1 class="profile-name">MATHEUS JERONIMO</h1>
             <p class="profile-title">[ Engenharia de Automação e Controle ]</p>
+            <a href="mailto:matheusjeronimo@gmail.com" class="email-badge">matheusjeronimo@gmail.com</a>
         </div>
 
         <div class="links-container">
