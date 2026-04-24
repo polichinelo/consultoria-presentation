@@ -650,6 +650,10 @@
 
     <!-- UI JARVIS -->
     <div id="jarvis-ui">
+        <div style="position: absolute; top: 20px; left: 30px; display: flex; align-items: center; gap: 15px; pointer-events: auto; z-index: 1002;">
+            <img src="assets/logo2.png" alt="Logo JARVIS" style="height: 45px; border-radius: 50%; border: 1px solid var(--tech-cyan); box-shadow: 0 0 15px rgba(0, 229, 255, 0.3);">
+            <div style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.2rem; color: #fff; letter-spacing: 1px; text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);">JARVIS<span style="color: var(--tech-cyan);">.OS</span></div>
+        </div>
         <div id="nav-left" class="nav-arrow left" onclick="navigateReveal('prev')">&lt;&lt;</div>
         <div id="nav-right" class="nav-arrow right pulse" onclick="navigateReveal('next')">&gt;&gt;</div>
         <div class="status-counter">[ <span id="current-slide">01</span> / 10 ]</div>
@@ -661,7 +665,11 @@
             <!-- SLIDE 1: Capa -->
             <!-- Usando a Imagem de Fundo Gerada pela IA -->
             <section data-background-color="var(--navy-blue)" data-background-image="assets/bg/slide1.png" data-background-opacity="0.35" data-parallax-background-size="2100px 900px">
-                <div class="glass-panel" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <div class="glass-panel" style="text-align: center; max-width: 800px; margin: 0 auto; position: relative;">
+                    <!-- Logo Animado -->
+                    <video autoplay loop muted playsinline style="width: 140px; height: 140px; object-fit: cover; border-radius: 50%; border: 2px solid var(--tech-cyan); box-shadow: 0 0 30px rgba(0, 229, 255, 0.4); margin-bottom: 25px;">
+                        <source src="assets/logo_animated.mp4" type="video/mp4">
+                    </video>
                     <h1>EFICIÊNCIA ENERGÉTICA E AUTOMAÇÃO</h1>
                     <h2 style="color: var(--slate-grey); font-weight: 400; font-family: 'Inter';">O FUTURO DA SUA OPERAÇÃO</h2>
                     <br>
@@ -951,6 +959,9 @@
 
             <!-- SLIDE 10: Fechamento com Baloões Neon -->
             <section data-background-image="assets/bg/slide10.png" data-background-color="var(--navy-blue)" data-background-opacity="0.25">
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="assets/logo1.png" alt="JARVIS Logo" style="width: 110px; height: 110px; object-fit: cover; border-radius: 50%; border: 2px solid var(--tech-cyan); box-shadow: 0 0 25px rgba(0, 229, 255, 0.3);">
+                </div>
                 <h2 style="font-size:1.8rem; margin-bottom: 10px;">VAMOS TRANSFORMAR A SUA OPERAÇÃO?</h2>
                 <p class="cyan-text" style="font-family: 'JetBrains Mono'; margin-top:0; margin-bottom: 40px;">MATHEUS JERONIMO | JARVIS.SYS</p>
                 
